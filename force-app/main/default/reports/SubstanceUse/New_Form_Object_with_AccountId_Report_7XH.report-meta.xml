@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>RowCount</column>
+        </chartSummaries>
+        <chartType>Donut</chartType>
+        <enableHoverLabels>false</enableHoverLabels>
+        <expandOthers>false</expandOthers>
+        <groupingColumn>CDF1</groupingColumn>
+        <legendPosition>Right</legendPosition>
+        <location>CHART_BOTTOM</location>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>true</showTotal>
+        <showValues>false</showValues>
+        <size>Medium</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <title>SUD Screen</title>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>Form_Object__c.Cutting_Down__c</field>
+    </columns>
+    <columns>
+        <field>Form_Object__c.Annoyance_by_Criticism__c</field>
+    </columns>
+    <columns>
+        <field>Form_Object__c.Guilty_Feeling__c</field>
+    </columns>
+    <columns>
+        <field>Form_Object__c.Eye_opener__c</field>
+    </columns>
+    <customDetailFormulas>
+        <calculatedFormula>IF(
+  (IF(TEXT(Form_Object__c.Cutting_Down__c) = &quot;Yes&quot;, 1, 0) +
+   IF(TEXT(Form_Object__c.Annoyance_by_Criticism__c) = &quot;Yes&quot;, 1, 0) +
+   IF(TEXT(Form_Object__c.Guilty_Feeling__c) = &quot;Yes&quot;, 1, 0) +
+   IF(TEXT(Form_Object__c.Eye_opener__c) = &quot;Yes&quot;, 1, 0)) &lt;= 1,
+  &quot;Negative screen&quot;,
+  &quot;Positive screen&quot;
+)</calculatedFormula>
+        <dataType>Text</dataType>
+        <description>Score 1 point for each “Yes” response and 0 points for each “No” response.  · Total possible score ranges from 0 to 4</description>
+        <developerName>CDF1</developerName>
+        <label>SUD Screeing</label>
+        <scale>0</scale>
+    </customDetailFormulas>
+    <filter>
+        <booleanFilter>1 AND (2 OR 3 OR 4 OR 5) AND 6</booleanFilter>
+        <criteriaItems>
+            <column>Form_Object__c.Form_RecordType_Name__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>MCO Diagnostic Assessment</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Form_Object__c.Cutting_Down__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Form_Object__c.Annoyance_by_Criticism__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Form_Object__c.Guilty_Feeling__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Form_Object__c.Eye_opener__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>FK_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>test,TEST,Test</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>CDF1</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>SUD - Scores</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Form_Object__c@Form_Object__c.AccountId__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

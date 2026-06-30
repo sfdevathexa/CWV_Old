@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>ElixirSuite__Claim__c$Name</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__Claim__c$ElixirSuite__Patient_Name__c</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__Claim__c$ElixirSuite__Patient_DOB__c</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__Claim__c.ElixirSuite__Claim_Line_Items__r$ElixirSuite__From_Date_Of_Service__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>ElixirSuite__Claim__c$ElixirSuite__Total_Charge__c</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__Claim__c$ElixirSuite__Billing_Provider_Info_NPI__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>ElixirSuite__Claim__c$ElixirSuite__Payor__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>DBH Local</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ElixirSuite__Claim__c$ElixirSuite__Claim_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Invalid Claim</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>DBH LOCAL</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Claims_with_Claim_Line_Items__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>ElixirSuite__Claim__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

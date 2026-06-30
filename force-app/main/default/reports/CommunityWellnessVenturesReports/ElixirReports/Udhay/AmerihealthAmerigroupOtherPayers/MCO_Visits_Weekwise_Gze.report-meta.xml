@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__Visits__c.Start_Date__c</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__Visits__c.ElixirSuite__Visit_Start__c</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__Visits__c.ElixirSuite__Visit_End__c</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__Visits__c.Encounter_Type__c</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__Visits__c.ElixirSuite__Status__c</field>
+    </columns>
+    <description>MCO Visits Weekwise</description>
+    <filter>
+        <criteriaItems>
+            <column>ElixirSuite__Visits__c.Service_Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>MCO - DIAGNOSTIC ASSESSMENT,MCO - FAMILY W/O CONSUMER,MCO - FAMILY/COUPLES THERAPY,MCO - GROUP COUNSELING,MCO - INITIAL PSYCHIATRIC EVALUATION,MCO - PSYCHIATRY FOLLOW-UP APPOINTMENT</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ElixirSuite__Visits__c.ElixirSuite__Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Closed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ElixirSuite__Visits__c.Encounter_Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Non-Billable Service</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Week</dateGranularity>
+        <field>CUST_LAST_UPDATE</field>
+        <sortOrder>Desc</sortOrder>
+    </groupingsDown>
+    <name>2- MCO Visits Weekwise</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$ElixirSuite__Visits__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>ElixirSuite__Visits__c.ElixirSuite__Admit_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

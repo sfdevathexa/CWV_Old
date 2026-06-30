@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Account.ElixirSuite__Claims__r.ElixirSuite__Procedures__r$ElixirSuite__Account__c</field>
+    </columns>
+    <columns>
+        <field>Account.ElixirSuite__Claims__r.ElixirSuite__Procedures__r$ElixirSuite__From_Date_of_Service__c</field>
+    </columns>
+    <columns>
+        <field>Account.ElixirSuite__Claims__r.ElixirSuite__Procedures__r$Name</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Account.ElixirSuite__Claims__r.ElixirSuite__Procedures__r$ElixirSuite__Charges__c</field>
+    </columns>
+    <columns>
+        <field>Account.ElixirSuite__Claims__r$ElixirSuite__Claim_Status__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Account.ElixirSuite__Claims__r$ElixirSuite__Claim_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Paid and resolved</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account$Name</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>test</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Account.ElixirSuite__Claims__r$ElixirSuite__Payor__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Unpaid Claims by Payer with Patient</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Claim_with_Account_and_procedure_Code__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Account.ElixirSuite__Claims__r.ElixirSuite__Procedures__r$ElixirSuite__From_Date_of_Service__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

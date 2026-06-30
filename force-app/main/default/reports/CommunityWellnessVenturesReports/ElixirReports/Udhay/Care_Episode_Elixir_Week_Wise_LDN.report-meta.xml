@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>ElixirSuite__Visits__c$Name</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__Visits__c$ElixirSuite__Account__c</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__Visits__c$Service_Type__c</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__Visits__c$ElixirSuite__Status__c</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__Visits__c$ElixirSuite__Visit_Start__c</field>
+    </columns>
+    <description>Care Episode Elixir - Week Wise [To Check Add On]</description>
+    <format>Summary</format>
+    <groupingsDown>
+        <field>ElixirSuite__Visits__c$LastModifiedDate</field>
+        <sortOrder>Desc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Week</dateGranularity>
+        <field>ElixirSuite__Visits__c$CreatedDate</field>
+        <sortOrder>Desc</sortOrder>
+    </groupingsDown>
+    <name>Care Episode Elixir - Week Wise</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Care_Episode_Elixir__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>ElixirSuite__Visits__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>ElixirSuite__Exception_Log__c$Name</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__Exception_Log__c$Care_Episode__c</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__Exception_Log__c$CareEpisode_Status__c</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__Exception_Log__c$Status_Code__c</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__Exception_Log__c$Status__c</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__Exception_Log__c$ElixirSuite__Message__c</field>
+    </columns>
+    <description>All Success Care Episodes that are sent to crisp</description>
+    <filter>
+        <criteriaItems>
+            <column>ElixirSuite__Exception_Log__c$Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Success</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Success Records CRISP</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Exception_Logs__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>ElixirSuite__Exception_Log__c$CreatedDate</dateColumn>
+        <endDate>2029-05-10</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2024-05-01</startDate>
+    </timeFrameFilter>
+</Report>

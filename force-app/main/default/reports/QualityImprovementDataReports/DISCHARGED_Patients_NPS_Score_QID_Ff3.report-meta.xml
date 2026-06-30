@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>Preassessment_Site_Form__c.Net_score_for_quality_report__c:AVG/10</calculatedFormula>
+        <datatype>percent</datatype>
+        <developerName>FORMULA1</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Patient Satisfaction Score</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <colorRanges>
+        <columnName>FORMULA1</columnName>
+        <highBreakpoint>80.0</highBreakpoint>
+        <highColor>#006714</highColor>
+        <lowBreakpoint>50.0</lowBreakpoint>
+        <lowColor>#B50E03</lowColor>
+        <midColor>#B56200</midColor>
+    </colorRanges>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>CUST_OWNER_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_$Account.Enrollment_Date__c</field>
+    </columns>
+    <columns>
+        <field>FK_$Account.Discharge_Date__c</field>
+    </columns>
+    <columns>
+        <field>Preassessment_Site_Form__c.Net_Promoter_Score__c</field>
+    </columns>
+    <customDetailFormulas>
+        <calculatedFormula>CASE(
+CEILING(MONTH(FK_Account.Discharge_Date__c) / 3),
+1, &quot;Q1&quot;,
+2, &quot;Q2&quot;,
+3, &quot;Q3&quot;,
+4, &quot;Q4&quot;,
+&quot;None&quot;
+) &amp; &quot; &quot; &amp;
+CASE(
+MONTH(FK_Account.Discharge_Date__c),
+1, &quot;January&quot;,
+2, &quot;February&quot;,
+3, &quot;March&quot;,
+4, &quot;April&quot;,
+5, &quot;May&quot;,
+6, &quot;June&quot;,
+7, &quot;July&quot;,
+8, &quot;August&quot;,
+9, &quot;September&quot;,
+10, &quot;October&quot;,
+11, &quot;November&quot;,
+12, &quot;December&quot;,
+&quot;None&quot;
+) &amp; &quot; &quot; &amp;
+TEXT(YEAR(FK_Account.Discharge_Date__c))</calculatedFormula>
+        <dataType>Text</dataType>
+        <description>Quarter, Month and Year of the Discharge Date</description>
+        <developerName>CDF1</developerName>
+        <label>Month and Quarter</label>
+        <scale>2</scale>
+    </customDetailFormulas>
+    <filter>
+        <criteriaItems>
+            <column>CUST_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Net Promoter Score</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <formattingRules>
+        <columnName>FORMULA1</columnName>
+        <values>
+            <backgroundColor>#B50E03</backgroundColor>
+            <rangeUpperBound>50.0</rangeUpperBound>
+        </values>
+        <values>
+            <backgroundColor>#B56200</backgroundColor>
+            <rangeUpperBound>80.0</rangeUpperBound>
+        </values>
+        <values>
+            <backgroundColor>#006714</backgroundColor>
+        </values>
+    </formattingRules>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>CDF1</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>DISCHARGED Patients NPS Score - QID</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Preassessment_Site_Form__c@Preassessment_Site_Form__c.Account_Lookup__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>FK_$Account.Discharge_Date__c</dateColumn>
+        <endDate>2024-12-31</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2022-01-01</startDate>
+    </timeFrameFilter>
+</Report>

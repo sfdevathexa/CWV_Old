@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>ElixirSuite__Exception_Log__c$Name</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__Exception_Log__c$ElixirSuite__Message__c</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__Exception_Log__c$Care_Episode__c</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__Exception_Log__c$CareEpisode_Status__c</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__Exception_Log__c$CreatedBy</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__Exception_Log__c$CreatedDate</field>
+    </columns>
+    <description>All the exception logs that are created by CRISP Batch Class - &quot;BatchSyncPatientToCRISP&quot;</description>
+    <filter>
+        <criteriaItems>
+            <column>ElixirSuite__Exception_Log__c$CreatedBy</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Elixir Admin</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Exception logs CRISP</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Exception_Logs__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>ElixirSuite__Exception_Log__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_YESTERDAY</interval>
+    </timeFrameFilter>
+</Report>

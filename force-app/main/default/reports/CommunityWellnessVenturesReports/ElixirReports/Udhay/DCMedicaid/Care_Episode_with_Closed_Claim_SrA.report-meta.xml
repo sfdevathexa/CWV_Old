@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>ElixirSuite__Visits__c$Name</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__Visits__c$ElixirSuite__Visit_Start__c</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__Visits__c$ElixirSuite__Visit_End__c</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__Visits__c.ElixirSuite__Procedures__r$Name</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__Visits__c.ElixirSuite__Procedures__r$ElixirSuite__Claim__c</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__Visits__c.ElixirSuite__Procedures__r$ElixirSuite__Claim__c.ElixirSuite__Payor__c</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__Visits__c.ElixirSuite__Procedures__r$ElixirSuite__Claim__c.ElixirSuite__Validation_Error_Message__c</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__Visits__c.ElixirSuite__Procedures__r$ElixirSuite__Claim__c.ElixirSuite__Message__c</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__Visits__c$Encounter_Type__c</field>
+    </columns>
+    <description>Care Episode with Closed Claim</description>
+    <filter>
+        <criteriaItems>
+            <column>ElixirSuite__Visits__c$ElixirSuite__Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Closed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ElixirSuite__Visits__c$Service_Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>MHRS - CARE POINT,MHRS - COMMUNITY SUPPORT,MHRS - COMMUNITY SUPPORT COLLATERAL,MHRS - COMMUNITY SUPPORT PHYSICIAN TEAM,MHRS - COUNSELING - COMMUNITY BASED,MHRS - COUNSELING - OFFICE,MHRS - DIAGNOSTIC ASSESSMENT,MHRS - FAMILY COUNSELING W/CONSUMER,MHRS - FAMILY COUNSELING W/O CONSUMER,MHRS - GROUP COUNSELING,MHRS - TEAM MEETING,PSYCHIATRY GROUP,PSYCHIATRY INDIVIDUAL - MHRS MEDICATION TRAINING/SUPPORT</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ElixirSuite__Visits__c$Encounter_Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Non-Billable Service</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Week</dateGranularity>
+        <field>ElixirSuite__Visits__c$LastModifiedDate</field>
+        <sortOrder>Desc</sortOrder>
+    </groupingsDown>
+    <name>3- DC Medicaid - Visits Closed vs Claims</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Care_Episode_with_procedure_Codes__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>ElixirSuite__Visits__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

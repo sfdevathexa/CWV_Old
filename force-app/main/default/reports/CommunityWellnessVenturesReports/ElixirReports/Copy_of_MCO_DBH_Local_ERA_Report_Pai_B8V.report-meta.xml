@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>ElixirSuite__Visits__c.Id:UNIQUE</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA1</developerName>
+        <isActive>false</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Total Care Episodes</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>ElixirSuite__Visits__c.Id:UNIQUE</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA2</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Total Claims</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>BucketField_44913609:UNIQUE</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA3</developerName>
+        <isActive>false</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Claims Denied</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>RowCount</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA4</developerName>
+        <isActive>false</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>cc</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>ElixirSuite__Visits__c.Id:UNIQUE</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA5</developerName>
+        <downGroupingContext>GRAND_SUMMARY</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Total Care Episode</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_44913609</developerName>
+        <masterLabel>Claim Overall Status</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>ElixirSuite__Visits__c.ElixirSuite__Procedures__r$ElixirSuite__Claim__c.ElixirSuite__Claim_Status__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Claim Validation Error</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Denied</sourceValue>
+            </sourceValues>
+            <value>Claims: Denied</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Saved</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ready to Submit</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sent to Clearing house</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Clearing house accepted</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Clearing house rejected</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Payer Accepted</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Payer Rejected</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>ERA Received</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Paid and Patient Responsibility</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Paid and resolved</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Paid with Patient Responsibility – Ready to submit secondary Insurance</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Overpaid</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Underpaid</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Paid and patient responsibility with Secondary</sourceValue>
+            </sourceValues>
+            <value>Claims: Others</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>ElixirSuite__Visits__c.ElixirSuite__Procedures__r$ElixirSuite__Claim__c.ElixirSuite__Claim_Status__c</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__Visits__c.ElixirSuite__Procedures__r$ElixirSuite__Claim__c.CreatedDate</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__Visits__c.ElixirSuite__Procedures__r$ElixirSuite__Claim__c.ElixirSuite__Payor__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>ElixirSuite__Visits__c.ElixirSuite__Procedures__r$ElixirSuite__Days_Units__c</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__Visits__c.ElixirSuite__Procedures__r$ElixirSuite__Charges__c</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__Visits__c.ElixirSuite__Procedures__r.ElixirSuite__Claim_Line_Items__r.ElixirSuite__ERA_Line_Item__r$ElixirSuite__EOB__c</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__Visits__c.ElixirSuite__Procedures__r.ElixirSuite__Claim_Line_Items__r.ElixirSuite__ERA_Line_Item__r$CreatedDate</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__Visits__c.ElixirSuite__Procedures__r.ElixirSuite__Claim_Line_Items__r.ElixirSuite__ERA_Line_Item__r$ElixirSuite__EOB__c.ElixirSuite__Total_Charge__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>ElixirSuite__Visits__c.ElixirSuite__Procedures__r.ElixirSuite__Claim_Line_Items__r.ElixirSuite__ERA_Line_Item__r$ElixirSuite__EOB__c.ElixirSuite__Total_Paid__c</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__Visits__c.ElixirSuite__Procedures__r$ElixirSuite__Claim__c.ElixirSuite__Message__c</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__Visits__c.ElixirSuite__Procedures__r$ElixirSuite__Claim__c.ElixirSuite__Validation_Error_Message__c</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__Visits__c$Encounter_Type__c</field>
+    </columns>
+    <description>MCO Report - Paid</description>
+    <filter>
+        <criteriaItems>
+            <column>ElixirSuite__Visits__c$ElixirSuite__Account__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ElixirSuite__Visits__c$Name</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>test</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ElixirSuite__Visits__c.ElixirSuite__Procedures__r$ElixirSuite__Claim__c.ElixirSuite__Payor__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>DC Medicaid</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ElixirSuite__Visits__c$ElixirSuite__Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Closed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ElixirSuite__Visits__c.ElixirSuite__Procedures__r$ElixirSuite__Claim__c.ElixirSuite__Total_Amount_Paid_By_Insurance__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>0</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>ElixirSuite__Visits__c$Name</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>ElixirSuite__Visits__c.ElixirSuite__Procedures__r$ElixirSuite__Claim__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>ElixirSuite__Visits__c.ElixirSuite__Procedures__r$ElixirSuite__Claim__c.ElixirSuite__Total_Amount_Paid_By_Insurance__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Copy of MCO &amp; DBH Local ERA Report - Pai</name>
+    <params>
+        <name>co</name>
+        <value>0</value>
+    </params>
+    <reportType>Care_Episode_with_procedure_Codes__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
+    <sortColumn>ElixirSuite__Visits__c.ElixirSuite__Procedures__r.ElixirSuite__Claim_Line_Items__r.ElixirSuite__ERA_Line_Item__r$ElixirSuite__EOB__c.ElixirSuite__Total_Paid__c</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>ElixirSuite__Visits__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>ElixirSuite__EOB__c$Name</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__EOB__c.ElixirSuite__ERA_Line_Item__r$Name</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>ElixirSuite__EOB__c$ElixirSuite__Total_Charge__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>ElixirSuite__EOB__c$ElixirSuite__Claim__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>ElixirSuite__EOB__c$ElixirSuite__Claim__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>ERAs per Claim</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>ERA_Procedure_Line_Item_Report__c</reportType>
+    <scope>user</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>ElixirSuite__EOB__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

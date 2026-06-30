@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>ElixirSuite__Form_Value__c.Logged_In_User__c:UNIQUE</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA1</developerName>
+        <isActive>false</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Logged User</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <columns>
+        <field>ElixirSuite__Form_Value__c$Name</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__Form_Value__c$ElixirSuite__Form_Name__c</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__Form_Value__c$ElixirSuite__Care_Episode__c.ElixirSuite__Visit_Start__c</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__Form_Value__c$ElixirSuite__Care_Episode__c.ElixirSuite__Visit_End__c</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__Form_Value__c$ElixirSuite__Care_Episode__c.Service_Type__c</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__Form_Value__c$ElixirSuite__Care_Episode__c.Attending_Clinical_Staff__c</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__Form_Value__c$ElixirSuite__Care_Episode__c.Supervising_Provider__c</field>
+    </columns>
+    <description>Unavailable Forms as Progress note, MCO Diagnostic Assessment, GAIN-SS, MHRS Diag, CAFAS on an Account</description>
+    <filter>
+        <criteriaItems>
+            <column>ElixirSuite__Form_Value__c$ElixirSuite__Form_Name__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>Progress Note,MHRS Diagnostic Assessment,GAIN-SS,MCO Diagnostic Assessment,CAFAS</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ElixirSuite__Form_Value__c$ElixirSuite__Care_Episode__c.Encounter_Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Non-Billable Service</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ElixirSuite__Form_Value__c$ElixirSuite__Care_Episode__c.ElixirSuite__Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Active,Closed,ERROR,Reopened</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>ElixirSuite__Form_Value__c$ElixirSuite__Account__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>ElixirSuite__Form_Value__c$ElixirSuite__Care_Episode__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Progress Note Required</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Form_Values_with_Form_CSS__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>ElixirSuite__Form_Value__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>
