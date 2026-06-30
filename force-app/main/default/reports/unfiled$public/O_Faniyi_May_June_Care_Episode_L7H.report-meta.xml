@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Account.ElixirSuite__Account__r$Encounter_Type__c</field>
+    </columns>
+    <columns>
+        <field>Account.ElixirSuite__Account__r$Name</field>
+    </columns>
+    <columns>
+        <field>Account.ElixirSuite__Account__r$ElixirSuite__Visit_Start__c</field>
+    </columns>
+    <columns>
+        <field>Account.ElixirSuite__Account__r$Attending_Clinical_Staff__c</field>
+    </columns>
+    <columns>
+        <field>Account.ElixirSuite__Account__r$Supervising_Provider__c</field>
+    </columns>
+    <columns>
+        <field>Account.ElixirSuite__Account__r$ElixirSuite__Status__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Account.ElixirSuite__Account__r$Attending_Clinical_Staff__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Aerial Spencer,Cara White</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.ElixirSuite__Account__r$ElixirSuite__Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Closed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.ElixirSuite__Account__r$Encounter_Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>,Carepoint,Community Support,Counseling,Diagnostic Assessment,Interim treatment plan,Treatment Plan,Update Treatment Plan</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Account$Name</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>O. Faniyi - May &amp; June Care Episode</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Account_with_Care_Episode__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Account$ElixirSuite__Admit_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

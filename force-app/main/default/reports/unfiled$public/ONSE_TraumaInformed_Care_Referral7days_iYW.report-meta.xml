@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Lead.Recommended_Behavioral_Health_Services__c</field>
+    </columns>
+    <columns>
+        <field>Lead.Young_Men_s_Support_Groups_Priority__c</field>
+    </columns>
+    <columns>
+        <field>Lead.ONSE_Violence_Intervention_Priority__c</field>
+    </columns>
+    <columns>
+        <field>CDF1</field>
+    </columns>
+    <columns>
+        <field>Lead.HealthCloudGA__BirthDate__c</field>
+    </columns>
+    <columns>
+        <field>STREET</field>
+    </columns>
+    <columns>
+        <field>EMAIL</field>
+    </columns>
+    <columns>
+        <field>PHONE</field>
+    </columns>
+    <customDetailFormulas>
+        <calculatedFormula>FIRST_NAME + &quot; &quot; + MIDDLE_NAME + &quot; &quot; + LAST_NAME</calculatedFormula>
+        <dataType>Text</dataType>
+        <description>Full Name</description>
+        <developerName>CDF1</developerName>
+        <label>Name</label>
+        <scale>2</scale>
+    </customDetailFormulas>
+    <description>Weekly ONSE Trauma-Informed Care Referrals</description>
+    <filter>
+        <criteriaItems>
+            <column>COMPANY</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>ONSE</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>ONSE Trauma-Informed Care Referrals</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>LeadList</reportType>
+    <scope>org</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

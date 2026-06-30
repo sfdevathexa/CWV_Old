@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>ElixirSuite__VOB__c$Name</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__VOB__c$ElixirSuite__Account__c</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__VOB__c$ElixirSuite__Status__c</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__VOB__c$ElixirSuite__Member_Id__c</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__VOB__c$ElixirSuite__Benefit__c</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__VOB__c$ElixirSuite__VOB_Verification_Status__c</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__VOB__c$ElixirSuite__Last_Verified_Date__c</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__VOB__c$Insurance_Expires__c</field>
+    </columns>
+    <description>Clients sorted by Insurance Type</description>
+    <filter>
+        <criteriaItems>
+            <column>ElixirSuite__VOB__c$ElixirSuite__Account__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Emon Fleming,Monroe Chase,Regis Payne,Quintin Martin,Michael Jones,Donovan Jones,Demarko Allen,Antwoine Glover,Fransisco Mercado,Eric Cash,Tevon Brent,Caleb Kirkland,Kevon Maynor,Eugene Watkins,Tyrik Brown,Darrick Buchanan,Andrew Baskerville,Willie Frazier,Donte Graves,Raynard Hall,Niko Gibbs,Kobe Quick</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>ElixirSuite__VOB__c$ElixirSuite__Payer__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Pathways Clients  Insurance Type Report</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Insurances_VOB__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>ElixirSuite__VOB__c$ElixirSuite__Account__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>ElixirSuite__VOB__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

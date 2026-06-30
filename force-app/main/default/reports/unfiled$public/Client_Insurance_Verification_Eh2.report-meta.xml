@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_$Account.ElixirSuite__First_Name__c</field>
+    </columns>
+    <columns>
+        <field>FK_$Account.ElixirSuite__Last_Name__c</field>
+    </columns>
+    <columns>
+        <field>FK_$Account.ElixirSuite__DOB__c</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__VOB__c.ElixirSuite__Payer__c</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__VOB__c.ElixirSuite__Member_Id__c</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__VOB__c.ElixirSuite__Last_Verified_Date__c</field>
+    </columns>
+    <columns>
+        <field>ElixirSuite__VOB__c.Insurance_Expires__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>FK_$Account.ElixirSuite__Current_Status_Of_Patient__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Patients In Review,Current Patients</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Client Insurance  Verification</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$ElixirSuite__VOB__c@ElixirSuite__VOB__c.ElixirSuite__Account__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>FK_NAME</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>FK_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>HealthCloudGA__EhrEncounter__c$Name</field>
+    </columns>
+    <columns>
+        <field>HealthCloudGA__EhrEncounter__c.Activities$Subject</field>
+    </columns>
+    <columns>
+        <field>HealthCloudGA__EhrEncounter__c$HealthCloudGA__Account__c</field>
+    </columns>
+    <columns>
+        <field>HealthCloudGA__EhrEncounter__c.Activities$Status</field>
+    </columns>
+    <columns>
+        <field>HealthCloudGA__EhrEncounter__c$service_date__c</field>
+    </columns>
+    <format>Tabular</format>
+    <name>Test Report-2</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>EHR_Encounters_with_Events__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>HealthCloudGA__EhrEncounter__c$admit_date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>
